@@ -14,7 +14,10 @@ const AdditionalFeature = props => {
       >
         Add
       </button>
+      <div>
       {props.feature.name} (+{props.feature.price})
+      </div>
+      
     </li>
   );
 };

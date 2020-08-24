@@ -14,7 +14,7 @@ const AddedFeature = props => {
       >
         X
       </button>
-      {props.feature.name}
+      {props.feature.name} (+{props.feature.price})
     </li>
   );
 };
