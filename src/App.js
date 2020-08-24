@@ -11,7 +11,7 @@ const App = (props) => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={state.car} />
+        <Header car={state.car} additionalPrice={state.additionalPrice} />
         <AddedFeatures car={state.car} />
       </div>
       <div className="box">
