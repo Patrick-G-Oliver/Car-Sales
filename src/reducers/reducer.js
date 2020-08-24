@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 import { ADD_FEATURE, REMOVE_FEATURE } from "../actions";
-import { stat } from "fs";
+
 
 const initialState = {
     additionalPrice: 0,
@@ -35,8 +35,13 @@ export const reducer = (state = initialState, action) => {
         case REMOVE_FEATURE:
             return {
                 ...state, 
-            
-            }
+                addtionalFeatures: [state.additionalFeatures, action.payload],
+                additionalPrice: state.addtionalPrice - action.payload.price,
+                car: {...state.car,
+                    features: state.car.features.filter( (feature) => {
+                    return feature.id !== action.payload.id
+                })}
+            };
         default: 
             return state;
     };
